@@ -11,6 +11,7 @@ class SearchAppointments extends Component {
               type="text"
               className="form-control"
               aria-label="Search Appointments"
+              onChange={(e) => this.props.searchApts(e.target.value)}
             />
             <div className="input-group-append">
               <button
@@ -26,7 +27,7 @@ class SearchAppointments extends Component {
               <div className="sort-menu dropdown-menu dropdown-menu-right">
                 <button
                   className={
-                    'sort-by dropdown-item' +
+                    'sort-by dropdown-item ' +
                     (this.props.orderBy === 'petName' ? 'active' : '')
                   }
                   onClick={(e) =>
