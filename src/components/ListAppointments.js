@@ -31,7 +31,7 @@ class ListAppointments extends Component {
                     )
                   }
                 >
-                  {item.petName}
+                  {item.aptId}--{item.petName}
                 </span>
                 <span className="apt-date ml-auto">
                   <Moment
@@ -42,20 +42,21 @@ class ListAppointments extends Component {
                 </span>
               </div>
 
-              <div
-                className="owner-name"
-                contentEditable
-                suppressContentEditableWarning
-                onBlur={(e) =>
-                  this.props.updateInfo(
-                    'ownerName',
-                    e.target.innerText,
-                    item.aptId
-                  )
-                }
-              >
+              <div className="owner-name">
                 <span className="label-item">Owner: </span>
-                <span>{item.ownerName}</span>
+                <span
+                  contentEditable
+                  suppressContentEditableWarning
+                  onBlur={(e) =>
+                    this.props.updateInfo(
+                      'ownerName',
+                      e.target.innerText,
+                      item.aptId
+                    )
+                  }
+                >
+                  {item.ownerName}
+                </span>
               </div>
               <div
                 className="apt-notes"

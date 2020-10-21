@@ -80,7 +80,7 @@ class App extends Component {
     } else {
       order = -1;
     }
-    filteredApts
+    filteredApts = filteredApts
       .sort((a, b) => {
         if (
           a[this.state.orderBy].toLowerCase() <
